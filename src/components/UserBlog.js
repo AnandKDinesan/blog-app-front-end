@@ -4,6 +4,7 @@ import Blogs from './Blogs'
 import { Box } from '@mui/system'
 import { Button } from '@mui/material'
 import { Link } from 'react-router-dom'
+import './UserBlog.css'
 function UserBlog() {
 const [blogs,setBlogs]=useState([])
   const email=localStorage.getItem("email")
@@ -32,7 +33,7 @@ else{
 
   return (
     <div>
-       <>{add &&<div  className='container  w-50 mt-4 text-center  '>
+       <>{add &&<div className='container noblog  w-50 text-center  '>
           <h1>OOPS! You don't written any blogs !!</h1> 
           <p className='mt-4'>Share your thoughts and experiences with every one</p>
           <Button type='submit' LinkComponent={Link} to="/blogs/add"  className='mt-3' variant='contained' color="primary">Add Blog</Button>

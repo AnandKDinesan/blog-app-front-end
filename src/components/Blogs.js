@@ -33,7 +33,7 @@ function Blogs({item}) {
     
     <div>
 
-         <Card sx={{ width: "40%", margin:'auto',mt:2,padding:2,boxShadow:"5px 5px 10px #ccc" ,":hover:":{
+         <Card sx={{ width: "40%", margin:'auto',mt:10,padding:2,boxShadow:"5px 5px 10px #ccc" ,":hover:":{
           boxShadow:"10px 10px 20px #ccc"
          } }}>
          
@@ -59,7 +59,7 @@ function Blogs({item}) {
         image={item.image}
         alt="Blog Image"
       />
-      
+      <hr/>
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {item.user}:{item.description}

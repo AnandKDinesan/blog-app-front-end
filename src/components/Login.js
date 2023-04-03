@@ -6,6 +6,7 @@ import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { authActions } from '../store'
 import { useNavigate } from 'react-router-dom'
+import './Login.css'
 
 function Login()
  {
@@ -117,7 +118,7 @@ function Login()
   }
 
   return (
-    <div className='container  w-50 mt-4'>
+    <div  className='container login  w-50'>
       <form nonValidate autoComplete='off' onSubmit={handleSubmit } className='p-3'>
         <Box display="flex" flexDirection="column" alignItems={'center'} justifyContent={'center'}
         boxShadow="10px 10px 20px #ccc">

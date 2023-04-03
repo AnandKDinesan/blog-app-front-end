@@ -1,8 +1,9 @@
 import axios from 'axios'
 import React, { useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 import {Box,InputLabel,TextField,Typography,Button} from '@mui/material'
+import './BlogDetail.css'
 function BlogDetail() {
   const params=useParams()
   const [blog,setBlog]=useState([])
@@ -46,7 +47,7 @@ function BlogDetail() {
     navigate('/Myblogs')
   }
   return (
-    <div>
+    <div className='blogedit' >
       <form onSubmit={handleSubmit}>
         <Box 
         display='flex' 
@@ -63,11 +64,12 @@ function BlogDetail() {
           onChange={(e)=>setTitle(e.target.value)}/>
           
           <InputLabel><h4 className='mt-3'>Description</h4></InputLabel>
-          <TextField onChange={(e)=>setDes(e.target.value)}   variant="outlined" margin='normal' value={description} />
+          <TextField onChange={(e)=>setDes(e.target.value)} multiline rows={4}   variant="outlined" margin='normal' value={description} />
           
           <InputLabel><h4 className='mt-3'>Image URL</h4></InputLabel>
           <TextField onChange={(e)=>setImage(e.target.value)}   variant="outlined" margin='normal' value={image} />
           <Button type='submit' className='mt-3' variant='contained' color="primary"> Submit</Button> 
+          <Button LinkComponent={Link} to="/blogs">Cancel</Button>
          </Box>
         
       </form>

@@ -2,7 +2,8 @@ import React ,{useState,useEffect} from 'react'
 import {Box,InputLabel,TextField,Typography,Button} from '@mui/material'
 import uuid from 'react-uuid';
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
+import './AddBlog.css'
 function AddBlog() {
   const navigate=useNavigate()
   const [title,setTitle]=useState('')
@@ -41,7 +42,7 @@ function AddBlog() {
  }
 
   return (
-    <div className='mt-3'>
+    <div className='addblog'>
       <form onSubmit={handleSubmit}>
         <Box 
         display='flex' 
@@ -58,11 +59,12 @@ function AddBlog() {
           onChange={(e)=>setTitle(e.target.value)}/>
           
           
-          <TextField onChange={(e)=>setDes(e.target.value)}  label="Description" variant="outlined" margin='normal' />
+          <TextField onChange={(e)=>setDes(e.target.value)} multiline rows={4} label="Description" variant="outlined" margin='normal' />
           
           
           <TextField onChange={(e)=>setImage(e.target.value)}  label="Image URL" variant="outlined" margin='normal' />
-          <Button type='submit' className='mt-3' variant='contained' color="primary"> Submit</Button> 
+          <Button  type='submit' className='mt-3' variant='contained' color="primary" sx={{margin:1,borderRadius:10}}> Submit</Button> <Button LinkComponent={Link} to="/blogs">Cancel</Button>
+          
          </Box>
         
       </form>
